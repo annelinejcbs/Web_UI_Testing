@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REPORT_DIR: ${{ github.workspace }}/Reports/framework.html"  # Define the REPORT_DIR environment variable
+      REPORT_PATH: ${{ github.workspace }}/Reports/framework.html  # Define the REPORT_PATH environment variable
 
     steps:
       - name: Checkout code

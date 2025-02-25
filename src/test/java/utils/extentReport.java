@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.lang.reflect.Method;
 
 public class extentReport {
 
@@ -22,18 +23,18 @@ public class extentReport {
     // This method sets up the report at the beginning of the test suite
     @BeforeSuite
     public void reportSetup() {
-        // Use user.dir or GITHUB_WORKSPACE depending on the environment
-        String reportPath = System.getProperty("user.dir") + "/Reports/framework.html"; // Local setup
-        // Or use GITHUB_WORKSPACE for GitHub Actions
-        // String reportPath = System.getenv("GITHUB_WORKSPACE") + "/Reports/framework.html";
+        // Get the report path from the environment variable (if available)
+        String reportPath = System.getenv("REPORT_PATH");
+
+        // If the environment variable is not set, use a default path
+        if (reportPath == null || reportPath.isEmpty()) {
+            reportPath = "Reports/framework.html";  // Default relative path
+        }
 
         // Ensure that the Reports folder exists
-        //File reportDir = new File(System.getProperty("user.dir") + "/Reports"); // Local setup
-        // Or for GitHub Actions
-        File reportDir = new File(System.getenv("GITHUB_WORKSPACE") + "/Reports");
-
-        if (!reportDir.exists()) {
-            reportDir.mkdirs();  // Create the Reports folder if it doesn't exist
+        File reportDir = new File(reportPath);
+        if (!reportDir.getParentFile().exists()) {
+            reportDir.getParentFile().mkdirs();  // Create the Reports folder if it doesn't exist
         }
 
         // Set up the Extent report
@@ -48,6 +49,30 @@ public class extentReport {
         // Set system information
         extent.setSystemInfo("Operating System", System.getProperty("os.name"));
         extent.setSystemInfo("Tester", "Anneline");
+    }
 
+    // Create a test before each method
+    @BeforeMethod
+    public void startTest(Method method) {
+        // Start a test before each method
+        test = extent.createTest(method.getName());
+    }
+
+    // This method captures the test result after each test execution
+    @AfterMethod
+    public void endTest(ITestResult result) {
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            test.log(Status.PASS, "Test Passed");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            test.log(Status.FAIL, "Test Failed: " + result.getThrowable());
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            test.log(Status.SKIP, "Test Skipped");
+        }
+    }
+
+    // After all tests are done, flush the report data
+    @AfterSuite
+    public void tearDown() {
+        extent.flush();  // Write the report to the file
     }
 }
