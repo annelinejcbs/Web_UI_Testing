@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      REPORT_DIR: ${{ github.workspace }}/Reports/framework.html"  # Define the REPORT_DIR environment variable
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
