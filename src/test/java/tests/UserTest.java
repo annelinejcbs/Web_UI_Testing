@@ -74,8 +74,8 @@ public class UserTest extends extentReport {
             // Set up for Edge
             WebDriverManager.edgedriver().clearDriverCache().setup();
             EdgeOptions edgeOptions = new EdgeOptions();
-            String uniqueDirEdge = "/tmp/edge-user-data-" + UUID.randomUUID();
-            edgeOptions.addArguments("user-data-dir-edge=" + uniqueDirEdge);
+            //String uniqueDirEdge = "/tmp/edge-user-data-" + UUID.randomUUID();
+            //edgeOptions.addArguments("user-data-dir-edge=" + uniqueDirEdge);
 
             webDriver = new EdgeDriver(edgeOptions);
         } else {
