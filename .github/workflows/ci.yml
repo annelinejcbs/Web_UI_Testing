@@ -34,3 +34,7 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+
+      - name: Show Surefire Report Content
+        run: |
+          cat target/surefire-reports/*.txt

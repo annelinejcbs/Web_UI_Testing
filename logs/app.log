@@ -163,3 +163,23 @@
 2025-02-25 12:00:34 INFO  [main] tests.UserTest - User BenShoe1740477633041 was added successfully.
 2025-02-25 12:00:35 INFO  [main] tests.UserTest - Test completed. Closing the browser.
 2025-02-25 12:00:36 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 14:53:05 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application. chrome
+2025-02-25 14:53:05 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 14:53:05 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 14:53:05 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 14:53:07 INFO  [main] tests.UserTest - User PinkTeddy1740487985684 saved successfully.
+2025-02-25 14:53:07 INFO  [main] tests.UserTest - User PinkTeddy1740487985684 was added successfully.
+2025-02-25 14:53:08 INFO  [main] tests.UserTest - User BenShoe1740487987494 saved successfully.
+2025-02-25 14:53:09 INFO  [main] tests.UserTest - User BenShoe1740487987494 was added successfully.
+2025-02-25 14:53:09 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 14:53:09 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 14:53:28 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application. edge
+2025-02-25 14:53:28 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 14:53:28 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 14:53:28 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 14:53:30 INFO  [main] tests.UserTest - User PinkTeddy1740488008652 saved successfully.
+2025-02-25 14:53:30 INFO  [main] tests.UserTest - User PinkTeddy1740488008652 was added successfully.
+2025-02-25 14:53:31 INFO  [main] tests.UserTest - User BenShoe1740488010466 saved successfully.
+2025-02-25 14:53:32 INFO  [main] tests.UserTest - User BenShoe1740488010466 was added successfully.
+2025-02-25 14:53:32 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 14:53:33 INFO  [main] tests.UserTest - Browser closed.
