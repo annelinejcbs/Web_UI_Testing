@@ -52,8 +52,8 @@ public class UserTest extends extentReport {
 
         // Create unique temporary user data directories for each session
         String tempDirPath = "user-data-dir-" + System.currentTimeMillis();  // Use timestamp to ensure uniqueness
-        Path tempDir = Files.createTempDirectory("chrome-user-data-" + Thread.currentThread().getId());
-        Path tempDirEdge = Files.createTempDirectory("edge-user-data-" + Thread.currentThread().getId());
+        Path tempDir = Files.createTempDirectory(tempDirPath + "chrome-user-data-" + Thread.currentThread().getId());
+        Path tempDirEdge = Files.createTempDirectory(tempDirPath +"edge-user-data-" + Thread.currentThread().getId());
 
         if (browser.equalsIgnoreCase("chrome")) {
             // Set up for Chrome
