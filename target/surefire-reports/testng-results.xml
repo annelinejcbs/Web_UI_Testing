@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-25T14:52:55 SAST" name="Web_UI_Testing_Suite" finished-at="2025-02-25T14:53:33 SAST" duration-ms="38529">
+    <groups>
+    </groups>
+    <test started-at="2025-02-25T14:52:55 SAST" name="chrome" finished-at="2025-02-25T14:53:09 SAST" duration-ms="14403">
+      <class name="tests.UserTest">
+        <test-method is-config="true" signature="setUpExtent()[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:52:55 SAST" name="setUpExtent" finished-at="2025-02-25T14:52:55 SAST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpExtent -->
+        <test-method is-config="true" signature="beforeTestMethod(org.testng.ITestResult)[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:52:55 SAST" name="beforeTestMethod" finished-at="2025-02-25T14:52:55 SAST" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=UserTest.testAddUser()[pri:0, instance:tests.UserTest@71e9ebae] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:52:55 SAST" name="setUp" finished-at="2025-02-25T14:53:05 SAST" duration-ms="10331" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testAddUser()[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:53:05 SAST" name="testAddUser" finished-at="2025-02-25T14:53:09 SAST" duration-ms="3840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:53:09 SAST" name="tearDown" finished-at="2025-02-25T14:53:09 SAST" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserTest@71e9ebae]" started-at="2025-02-25T14:53:09 SAST" name="tearDown" finished-at="2025-02-25T14:53:09 SAST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAddUser status=SUCCESS method=UserTest.testAddUser()[pri:0, instance:tests.UserTest@71e9ebae] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.UserTest -->
+    </test> <!-- chrome -->
+    <test started-at="2025-02-25T14:53:09 SAST" name="edge" finished-at="2025-02-25T14:53:33 SAST" duration-ms="24112">
+      <class name="tests.UserTest">
+        <test-method is-config="true" signature="reportSetup()[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:52:54 SAST" name="reportSetup" finished-at="2025-02-25T14:52:55 SAST" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportSetup -->
+        <test-method is-config="true" signature="setUpExtent()[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:09 SAST" name="setUpExtent" finished-at="2025-02-25T14:53:09 SAST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpExtent -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:09 SAST" name="setUp" finished-at="2025-02-25T14:53:28 SAST" duration-ms="18774" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="beforeTestMethod(org.testng.ITestResult)[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:09 SAST" name="beforeTestMethod" finished-at="2025-02-25T14:53:09 SAST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=UserTest.testAddUser()[pri:0, instance:tests.UserTest@58ce9668] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method signature="testAddUser()[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:28 SAST" name="testAddUser" finished-at="2025-02-25T14:53:32 SAST" duration-ms="4029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:32 SAST" name="tearDown" finished-at="2025-02-25T14:53:33 SAST" duration-ms="1308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:33 SAST" name="tearDown" finished-at="2025-02-25T14:53:33 SAST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAddUser status=SUCCESS method=UserTest.testAddUser()[pri:0, instance:tests.UserTest@58ce9668] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="reportTearDown()[pri:0, instance:tests.UserTest@58ce9668]" started-at="2025-02-25T14:53:33 SAST" name="reportTearDown" finished-at="2025-02-25T14:53:33 SAST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTearDown -->
+      </class> <!-- tests.UserTest -->
+    </test> <!-- edge -->
+  </suite> <!-- Web_UI_Testing_Suite -->
+</testng-results>

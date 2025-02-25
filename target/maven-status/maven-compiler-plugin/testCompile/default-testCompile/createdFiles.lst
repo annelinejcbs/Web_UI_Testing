@@ -1,0 +1,6 @@
+pages\AddUserPage.class
+utils\DataUtils.class
+utils\extentReport.class
+pages\UserListPage.class
+tests\UserTest.class
+utils\TakeScreenShot.class

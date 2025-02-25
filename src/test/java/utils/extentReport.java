@@ -20,7 +20,7 @@ public class extentReport {
     // This method sets up the report at the beginning of the test suite
     @BeforeSuite
     public void reportSetup() {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/Reports/framework.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("Web_UI_Testing/Reports/framework.html");
         htmlReporter.config().setDocumentTitle("Web_UI_Testing Automation Report");
         htmlReporter.config().setReportName("Web_UI_Testing Automation Report");
         htmlReporter.config().setTheme(Theme.DARK);
