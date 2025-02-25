@@ -11,6 +11,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+
 public class extentReport {
 
     private ExtentHtmlReporter htmlReporter;
@@ -20,39 +22,32 @@ public class extentReport {
     // This method sets up the report at the beginning of the test suite
     @BeforeSuite
     public void reportSetup() {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty(System.getProperty("user.dir") + "/Reports/framework.html"));
+        // Use user.dir or GITHUB_WORKSPACE depending on the environment
+        String reportPath = System.getProperty("user.dir") + "/Reports/framework.html"; // Local setup
+        // Or use GITHUB_WORKSPACE for GitHub Actions
+        // String reportPath = System.getenv("GITHUB_WORKSPACE") + "/Reports/framework.html";
+
+        // Ensure that the Reports folder exists
+        //File reportDir = new File(System.getProperty("user.dir") + "/Reports"); // Local setup
+        // Or for GitHub Actions
+        File reportDir = new File(System.getenv("GITHUB_WORKSPACE") + "/Reports");
+
+        if (!reportDir.exists()) {
+            reportDir.mkdirs();  // Create the Reports folder if it doesn't exist
+        }
+
+        // Set up the Extent report
+        htmlReporter = new ExtentHtmlReporter(reportPath);
         htmlReporter.config().setDocumentTitle("Web_UI_Testing Automation Report");
         htmlReporter.config().setReportName("Web_UI_Testing Automation Report");
         htmlReporter.config().setTheme(Theme.DARK);
+
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
+
+        // Set system information
         extent.setSystemInfo("Operating System", System.getProperty("os.name"));
         extent.setSystemInfo("Tester", "Anneline");
-    }
 
-    // Before each test method, create a new ExtentTest instance
-    @BeforeMethod
-    public void beforeTestMethod(ITestResult result) {
-        // Create a new test for each test method
-        test = extent.createTest(result.getMethod().getMethodName());
-    }
-
-    // This method is used to log the results of the test method
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            test.log(Status.FAIL, "Test Case Failed is : " + result.getName());
-            test.log(Status.FAIL, "Test Case Failed is : " + result.getThrowable());
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            test.log(Status.SKIP, "Test Case Skipped is : " + result.getName());
-        } else if (result.getStatus() == ITestResult.SUCCESS) {
-            test.log(Status.PASS, "Test Case Passed is : " + result.getName());
-        }
-    }
-
-    // This method flushes the report after the test suite is completed
-    @AfterSuite
-    public void reportTearDown() {
-        extent.flush();
     }
 }
