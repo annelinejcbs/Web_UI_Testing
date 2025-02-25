@@ -32,4 +32,4 @@ jobs:
       - name: Submit Dependency Snapshot
         uses: advanced-security/maven-dependency-submission-action@latest
         with:
-          github_token: ${{ secrets.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 }}  # Use the new token
+          github_token: ${{ secrets.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 }}  # Use the new token
