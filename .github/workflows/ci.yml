@@ -1,7 +1,6 @@
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,11 +24,7 @@ jobs:
       - name: Run Tests
         run: mvn test
 
-      - name: Show Surefire Report Content
-        run: |
-          cat target/surefire-reports/*.txt
-
       - name: Submit Dependency Snapshot
         uses: advanced-security/maven-dependency-submission-action@latest
         with:
-          github_token: ${{ secrets.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 }}  # Use the new token
+          github_token: ${{ secrets.MY_PAT }}  # Use the personal access token here
