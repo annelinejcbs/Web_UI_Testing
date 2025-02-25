@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -49,11 +50,12 @@ public class UserTest extends extentReport {
     public void setUp(String browser) {
         WebDriver webDriver;
 
+        String userDataDir = "/path/to/user/data/directory/" + System.currentTimeMillis();
+
         if (browser.equalsIgnoreCase("chrome")) {
             // Set up for Chrome
             WebDriverManager.chromedriver().clearDriverCache().setup();
             ChromeOptions options = new ChromeOptions();
-            String userDataDir = "/path/to/unique/directory" + System.currentTimeMillis(); // Generate a unique directory name
             options.addArguments("user-data-dir=" + userDataDir);
             options.addArguments("--headless");
             options.addArguments("--no-sandbox");
@@ -64,8 +66,11 @@ public class UserTest extends extentReport {
             WebDriverManager.firefoxdriver().clearDriverCache().setup();
             webDriver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")) {
+
             // Set up for Edge
             WebDriverManager.edgedriver().clearDriverCache().setup();
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.addArguments("user-data-dir=" + userDataDir);
             webDriver = new EdgeDriver();
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
