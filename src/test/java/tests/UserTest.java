@@ -59,7 +59,7 @@ public class UserTest extends extentReport {
             // Set up for Chrome
             WebDriverManager.chromedriver().clearDriverCache().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("user-data-dir=" + tempDir.toString());
+          //  options.addArguments("user-data-dir=" + tempDir.toString());
             options.addArguments("--headless");  // Remove if not needed for debugging
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -72,7 +72,7 @@ public class UserTest extends extentReport {
             // Set up for Edge
             WebDriverManager.edgedriver().clearDriverCache().setup();
             EdgeOptions edgeOptions = new EdgeOptions();
-            edgeOptions.addArguments("user-data-dir=" + tempDirEdge.toString());
+           // edgeOptions.addArguments("user-data-dir=" + tempDirEdge.toString());
             webDriver = new EdgeDriver(edgeOptions);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
