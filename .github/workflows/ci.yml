@@ -24,7 +24,4 @@ jobs:
       - name: Run Tests
         run: mvn test
 
-      - name: Submit Dependency Snapshot
-        uses: advanced-security/maven-dependency-submission-action@latest
-        with:
-          github_token: ${{ secrets.MY_PAT }}  # Use the personal access token here
+
