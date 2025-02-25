@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -51,6 +52,12 @@ public class UserTest extends extentReport {
         if (browser.equalsIgnoreCase("chrome")) {
             // Set up for Chrome
             WebDriverManager.chromedriver().clearDriverCache().setup();
+            ChromeOptions options = new ChromeOptions();
+            String userDataDir = "/path/to/unique/directory" + System.currentTimeMillis(); // Generate a unique directory name
+            options.addArguments("user-data-dir=" + userDataDir);
+            options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
             webDriver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             // Set up for Firefox
