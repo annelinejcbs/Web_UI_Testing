@@ -1,19 +1,6 @@
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      REPORT_DIR: ${{ github.workspace }}/Reports/framework.html
 
     steps:
       - name: Checkout code
@@ -35,23 +22,14 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
-      - name: Install Edge WebDriver and run tests
-        run: |
-          # Install Microsoft Edge Driver and set up environment
-          wget https://msedgedriver.azureedge.net/113.0.1774.50/edgedriver_linux64.zip
-          unzip edgedriver_linux64.zip
-          sudo mv msedgedriver /usr/local/bin/
-
-          # Run the tests (with increased timeout settings)
-          mvn test -Dtest=tests.UserTest -DpageLoadTimeout=600000 -DuserDataDir=/tmp/edge-user-data --no-transfer-progress
+      - name: Run Tests
+        run: mvn test
 
       - name: Show Surefire Report Content
         run: |
           cat target/surefire-reports/*.txt
 
-      - name: Upload test report
-        uses: actions/upload-artifact@v2
+      - name: Submit Dependency Snapshot
+        uses: advanced-security/maven-dependency-submission-action@latest
         with:
-          name: test-report
-          path: target/surefire-reports/
-
+          github_token: ${{ secrets.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 }}  # Use the new token
