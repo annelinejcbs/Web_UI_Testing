@@ -24,7 +24,9 @@ jobs:
       - name: Run Tests
         run: mvn test
 
-        uses: advanced-security/maven-dependency-submission-action@v1.0.0  # Try using a specific stable version
-
-
+      - name: Submit Dependency Snapshot
+        uses: advanced-security/maven-dependency-submission-action@latest
+        with:
+          github_token: ${{ secrets.MY_PAT }}  # Use the personal access token here
+          uses: advanced-security/maven-dependency-submission-action@v1.0.0  # Try using a specific stable version
 
