@@ -24,6 +24,8 @@ import org.openqa.selenium.By;
 import utils.TakeScreenShot;
 import utils.extentReport;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
 
 public class UserTest extends extentReport {
@@ -47,31 +49,31 @@ public class UserTest extends extentReport {
 
     @Parameters("browser")
     @BeforeMethod
-    public void setUp(String browser) {
+    public void setUp(String browser) throws Exception {
         WebDriver webDriver;
 
-        String userDataDir = "/path/to/user/data/directory/" + System.currentTimeMillis();
+        // Create a unique temporary user data directory for each session
+        Path tempDir = Files.createTempDirectory("chrome-user-data");
 
         if (browser.equalsIgnoreCase("chrome")) {
             // Set up for Chrome
             WebDriverManager.chromedriver().clearDriverCache().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("user-data-dir=" + userDataDir);
+            options.addArguments("user-data-dir=" + tempDir.toString());
             options.addArguments("--headless");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-            webDriver = new ChromeDriver();
+            webDriver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
             // Set up for Firefox
             WebDriverManager.firefoxdriver().clearDriverCache().setup();
             webDriver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")) {
-
             // Set up for Edge
             WebDriverManager.edgedriver().clearDriverCache().setup();
             EdgeOptions edgeOptions = new EdgeOptions();
-            edgeOptions.addArguments("user-data-dir=" + userDataDir);
-            webDriver = new EdgeDriver();
+            edgeOptions.addArguments("user-data-dir=" + tempDir.toString());
+            webDriver = new EdgeDriver(edgeOptions);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
@@ -94,8 +96,10 @@ public class UserTest extends extentReport {
         // Log the end of the test
         logger.info("Test completed. Closing the browser.");
 
+        // Clean up WebDriver and delete the temp directory
         if (driver.get() != null) {
             driver.get().quit();  // Clean up after the test
+            driver.remove();
         }
 
         logger.info("Browser closed.");
