@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Web_UI_Testing_Suite" verbose="1">
+    <test thread-count="5" name="chrome">
+    <parameter name ="browser" value="chrome"/>
+
+        <classes>
+            <!-- Add your test classes here -->
+            <class name="tests.UserTest"/>
+        </classes>
+    </test>
+
+    <test thread-count="5" name="edge">
+        <parameter name ="browser" value="edge"/>
+
+        <classes>
+            <!-- Add your test classes here -->
+            <class name="tests.UserTest"/>
+        </classes>
+    </test>
+
+</suite>

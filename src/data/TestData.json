@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "firstName": "Pink",
+      "lastName": "Teddy",
+      "username": "PinkTeddy",
+      "password": "Pass1",
+      "company": "CompanyBBB",
+      "role": "Admin",
+      "email": "PinkTeddy@mail.com",
+      "cellPhone": "0857897654"
+    },
+    {
+      "firstName": "Ben",
+      "lastName": "Shoe",
+      "username": "BenShoe",
+      "password": "Pass2",
+      "company": "CompanyAAA",
+      "role": "Customer",
+      "email": "Ben@mail.com",
+      "cellPhone": "0849873829"
+    }
+  ]
+}

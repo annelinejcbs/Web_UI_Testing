@@ -1,0 +1,165 @@
+2025-02-25 10:18:41 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 10:18:47 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 10:18:47 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 10:18:47 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 10:18:50 INFO  [main] tests.UserTest - User PinkTeddy1740471527797 saved successfully.
+2025-02-25 10:18:50 INFO  [main] tests.UserTest - User PinkTeddy1740471527797 was added successfully.
+2025-02-25 10:18:52 INFO  [main] tests.UserTest - User BenShoe1740471530530 saved successfully.
+2025-02-25 10:18:53 INFO  [main] tests.UserTest - User BenShoe1740471530530 was added successfully.
+2025-02-25 10:18:53 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 10:18:53 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 10:55:58 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 10:56:03 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 10:56:03 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 10:56:04 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 10:56:05 INFO  [main] tests.UserTest - User PinkTeddy1740473764213 saved successfully.
+2025-02-25 10:56:05 INFO  [main] tests.UserTest - User PinkTeddy1740473764213 was added successfully.
+2025-02-25 10:56:07 INFO  [main] tests.UserTest - User BenShoe1740473765860 saved successfully.
+2025-02-25 10:56:07 INFO  [main] tests.UserTest - User BenShoe1740473765860 was added successfully.
+2025-02-25 10:56:07 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 10:56:07 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 10:59:32 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 10:59:39 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 10:59:39 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 10:59:39 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 10:59:41 INFO  [main] tests.UserTest - User PinkTeddy1740473979761 saved successfully.
+2025-02-25 10:59:41 INFO  [main] tests.UserTest - User PinkTeddy1740473979761 was added successfully.
+2025-02-25 10:59:42 INFO  [main] tests.UserTest - User BenShoe1740473981429 saved successfully.
+2025-02-25 10:59:42 INFO  [main] tests.UserTest - User BenShoe1740473981429 was added successfully.
+2025-02-25 10:59:42 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 10:59:43 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:00:31 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:00:39 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:00:39 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:00:39 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:00:41 INFO  [main] tests.UserTest - User PinkTeddy1740474039539 saved successfully.
+2025-02-25 11:00:41 INFO  [main] tests.UserTest - User PinkTeddy1740474039539 was added successfully.
+2025-02-25 11:00:42 INFO  [main] tests.UserTest - User BenShoe1740474041498 saved successfully.
+2025-02-25 11:00:43 INFO  [main] tests.UserTest - User BenShoe1740474041498 was added successfully.
+2025-02-25 11:00:43 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:00:43 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:03:21 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:03:27 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:03:27 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:03:28 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:03:29 INFO  [main] tests.UserTest - User PinkTeddy1740474208256 saved successfully.
+2025-02-25 11:03:29 INFO  [main] tests.UserTest - User PinkTeddy1740474208256 was added successfully.
+2025-02-25 11:03:31 INFO  [main] tests.UserTest - User BenShoe1740474209879 saved successfully.
+2025-02-25 11:03:31 INFO  [main] tests.UserTest - User BenShoe1740474209879 was added successfully.
+2025-02-25 11:03:31 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:03:31 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:05:47 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:05:51 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:05:51 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:05:52 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:05:53 INFO  [main] tests.UserTest - User PinkTeddy1740474352183 saved successfully.
+2025-02-25 11:05:53 INFO  [main] tests.UserTest - User PinkTeddy1740474352183 was added successfully.
+2025-02-25 11:05:55 INFO  [main] tests.UserTest - User BenShoe1740474353828 saved successfully.
+2025-02-25 11:05:55 INFO  [main] tests.UserTest - User BenShoe1740474353828 was added successfully.
+2025-02-25 11:05:55 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:05:55 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:23:11 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:23:16 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:23:16 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:23:16 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:23:18 INFO  [main] tests.UserTest - User PinkTeddy1740475396843 saved successfully.
+2025-02-25 11:23:18 INFO  [main] tests.UserTest - User PinkTeddy1740475396843 was added successfully.
+2025-02-25 11:23:20 INFO  [main] tests.UserTest - User BenShoe1740475398780 saved successfully.
+2025-02-25 11:23:20 INFO  [main] tests.UserTest - User BenShoe1740475398780 was added successfully.
+2025-02-25 11:23:20 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:23:21 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:24:22 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:24:29 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:24:29 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:24:29 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:24:31 INFO  [main] tests.UserTest - User PinkTeddy1740475469980 saved successfully.
+2025-02-25 11:24:31 INFO  [main] tests.UserTest - User PinkTeddy1740475469980 was added successfully.
+2025-02-25 11:24:33 INFO  [main] tests.UserTest - User BenShoe1740475472096 saved successfully.
+2025-02-25 11:24:33 INFO  [main] tests.UserTest - User BenShoe1740475472096 was added successfully.
+2025-02-25 11:24:33 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:24:34 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:34:39 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:34:47 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:34:47 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:34:47 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:34:47 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:34:47 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:34:52 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:34:52 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:34:52 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:34:54 INFO  [main] tests.UserTest - User PinkTeddy1740476092590 saved successfully.
+2025-02-25 11:34:54 INFO  [main] tests.UserTest - User PinkTeddy1740476092590 was added successfully.
+2025-02-25 11:34:56 INFO  [main] tests.UserTest - User BenShoe1740476094591 saved successfully.
+2025-02-25 11:34:56 INFO  [main] tests.UserTest - User BenShoe1740476094591 was added successfully.
+2025-02-25 11:34:56 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:34:56 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:41:05 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:41:10 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:41:10 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:41:11 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:41:12 INFO  [main] tests.UserTest - User PinkTeddy1740476471210 saved successfully.
+2025-02-25 11:41:13 INFO  [main] tests.UserTest - User PinkTeddy1740476471210 was added successfully.
+2025-02-25 11:41:14 INFO  [main] tests.UserTest - User BenShoe1740476473236 saved successfully.
+2025-02-25 11:41:14 INFO  [main] tests.UserTest - User BenShoe1740476473236 was added successfully.
+2025-02-25 11:41:15 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:41:15 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:49:02 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:49:06 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:49:06 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:49:07 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:49:08 INFO  [main] tests.UserTest - User PinkTeddy1740476947314 saved successfully.
+2025-02-25 11:49:09 INFO  [main] tests.UserTest - User PinkTeddy1740476947314 was added successfully.
+2025-02-25 11:49:10 INFO  [main] tests.UserTest - User BenShoe1740476949189 saved successfully.
+2025-02-25 11:49:10 INFO  [main] tests.UserTest - User BenShoe1740476949189 was added successfully.
+2025-02-25 11:49:11 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:49:11 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:51:27 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:51:31 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:51:31 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:51:32 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:51:34 INFO  [main] tests.UserTest - User PinkTeddy1740477092391 saved successfully.
+2025-02-25 11:51:34 INFO  [main] tests.UserTest - User PinkTeddy1740477092391 was added successfully.
+2025-02-25 11:51:35 INFO  [main] tests.UserTest - User BenShoe1740477094403 saved successfully.
+2025-02-25 11:51:36 INFO  [main] tests.UserTest - User BenShoe1740477094403 was added successfully.
+2025-02-25 11:51:36 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:51:36 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:51:36 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application.
+2025-02-25 11:51:39 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:51:39 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:51:39 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:51:41 INFO  [main] tests.UserTest - User PinkTeddy1740477100042 saved successfully.
+2025-02-25 11:51:41 INFO  [main] tests.UserTest - User PinkTeddy1740477100042 was added successfully.
+2025-02-25 11:51:43 INFO  [main] tests.UserTest - User BenShoe1740477102031 saved successfully.
+2025-02-25 11:51:43 INFO  [main] tests.UserTest - User BenShoe1740477102031 was added successfully.
+2025-02-25 11:51:43 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:51:44 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 11:54:07 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application. chrome
+2025-02-25 11:54:07 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 11:54:07 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 11:54:07 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 11:54:09 INFO  [main] tests.UserTest - User PinkTeddy1740477247967 saved successfully.
+2025-02-25 11:54:09 INFO  [main] tests.UserTest - User PinkTeddy1740477247967 was added successfully.
+2025-02-25 11:54:11 INFO  [main] tests.UserTest - User BenShoe1740477249830 saved successfully.
+2025-02-25 11:54:11 INFO  [main] tests.UserTest - User BenShoe1740477249830 was added successfully.
+2025-02-25 11:54:11 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 11:54:11 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 12:00:10 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application. chrome
+2025-02-25 12:00:10 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 12:00:10 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 12:00:10 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 12:00:12 INFO  [main] tests.UserTest - User PinkTeddy1740477611055 saved successfully.
+2025-02-25 12:00:13 INFO  [main] tests.UserTest - User PinkTeddy1740477611055 was added successfully.
+2025-02-25 12:00:14 INFO  [main] tests.UserTest - User BenShoe1740477613176 saved successfully.
+2025-02-25 12:00:15 INFO  [main] tests.UserTest - User BenShoe1740477613176 was added successfully.
+2025-02-25 12:00:15 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 12:00:15 INFO  [main] tests.UserTest - Browser closed.
+2025-02-25 12:00:30 INFO  [main] tests.UserTest - Setting up the WebDriver and launching the application. edge
+2025-02-25 12:00:30 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-25 12:00:30 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-25 12:00:30 INFO  [main] tests.UserTest - Successfully validated User List Table visibility.
+2025-02-25 12:00:32 INFO  [main] tests.UserTest - User PinkTeddy1740477631062 saved successfully.
+2025-02-25 12:00:32 INFO  [main] tests.UserTest - User PinkTeddy1740477631062 was added successfully.
+2025-02-25 12:00:34 INFO  [main] tests.UserTest - User BenShoe1740477633041 saved successfully.
+2025-02-25 12:00:34 INFO  [main] tests.UserTest - User BenShoe1740477633041 was added successfully.
+2025-02-25 12:00:35 INFO  [main] tests.UserTest - Test completed. Closing the browser.
+2025-02-25 12:00:36 INFO  [main] tests.UserTest - Browser closed.
