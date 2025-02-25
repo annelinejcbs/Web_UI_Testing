@@ -27,6 +27,7 @@ import utils.extentReport;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
+import java.util.UUID;
 
 public class UserTest extends extentReport {
     private String baseUrl = "http://www.way2automation.com/angularjs-protractor/webtables/";
@@ -59,7 +60,8 @@ public class UserTest extends extentReport {
             // Set up for Chrome
             WebDriverManager.chromedriver().clearDriverCache().setup();
             ChromeOptions options = new ChromeOptions();
-          //  options.addArguments("user-data-dir=" + tempDir.toString());
+            String uniqueDirChrome = "/tmp/chrome-user-data-" + UUID.randomUUID();
+            options.addArguments("user-data-dir=" + uniqueDirChrome);
             options.addArguments("--headless");  // Remove if not needed for debugging
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -72,7 +74,9 @@ public class UserTest extends extentReport {
             // Set up for Edge
             WebDriverManager.edgedriver().clearDriverCache().setup();
             EdgeOptions edgeOptions = new EdgeOptions();
-           // edgeOptions.addArguments("user-data-dir=" + tempDirEdge.toString());
+            String uniqueDirEdge = "/tmp/edge-user-data-" + UUID.randomUUID();
+            edgeOptions.addArguments("user-data-dir=" + uniqueDirEdge);
+
             webDriver = new EdgeDriver(edgeOptions);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
