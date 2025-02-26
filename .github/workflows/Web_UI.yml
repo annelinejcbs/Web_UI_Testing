@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'adoptopenjdk'  # Specify the JDK distribution (optional but recommended)
+          distribution: 'adoptium'  # Correct distribution name
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
