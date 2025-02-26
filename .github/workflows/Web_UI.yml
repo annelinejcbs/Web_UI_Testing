@@ -30,7 +30,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
             
-    # Install Firefox and dependencies
+      # Install Firefox and dependencies
       - name: Install Firefox and dependencies
         run: |
           sudo apt-get update
