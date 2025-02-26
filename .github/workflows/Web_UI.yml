@@ -34,7 +34,8 @@ jobs:
       - name: Install Firefox and dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y firefox libgtk-3-0 libdbus-glib-1-2 libxt6
+          wget https://download.mozilla.org/?product=firefox-134.0-SSL&os=linux64&lang=en-US -O firefox-134.0.tar.bz2
+
 
       - name: Install geckodriver
         run: |
