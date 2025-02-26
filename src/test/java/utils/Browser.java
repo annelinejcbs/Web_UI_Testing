@@ -27,12 +27,14 @@ public class Browser {
                     webDriver = new ChromeDriver(chromeOptions);
                     break;
                 case "firefox":
+
                     WebDriverManager.firefoxdriver().clearDriverCache().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--headless");
                     firefoxOptions.addArguments("--no-sandbox");
                     firefoxOptions.addArguments("--disable-dev-shm-usage");
                     webDriver = new FirefoxDriver(firefoxOptions);
+
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().clearDriverCache().setup();
