@@ -1,4 +1,4 @@
-name: Build and Test Java Project
+name: Build and Test Java Project with Firefox
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch:  # This allows manual triggering
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,6 +20,15 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
+          java-package: jdk
+          architecture: x64
+          distribution: 'adoptopenjdk'  # Specify the Java distribution
+          check-latest: false
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
+          overwrite-settings: true
+          job-status: success
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
@@ -46,6 +55,7 @@ jobs:
       - name: Run Tests
         run: mvn test
 
+      # Submit Dependency Snapshot
       - name: Submit Dependency Snapshot
         uses: advanced-security/maven-dependency-submission-action@v1.0.0
         with:
