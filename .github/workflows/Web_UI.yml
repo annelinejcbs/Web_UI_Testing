@@ -10,53 +10,45 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          java-package: jdk
-          architecture: x64
-          distribution: 'adoptopenjdk'  # Specify the Java distribution
-          check-latest: false
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
-          overwrite-settings: true
-          job-status: success
+        - name: Set up JDK
+          uses: actions/setup-java@v2
+          with:
+            java-version: '17'
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+        - name: Cache Maven dependencies
+          uses: actions/cache@v2
+          with:
+            path: ~/.m2/repository
+            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: |
+              ${{ runner.os }}-maven-
 
-      # Install Firefox and dependencies
-      - name: Install Firefox and dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y firefox libgtk-3-0 libdbus-glib-1-2 libxt6
+        # Install Firefox and dependencies
+        - name: Install Firefox and dependencies
+          run: |
+            sudo apt-get update
+            sudo apt-get install -y firefox libgtk-3-0 libdbus-glib-1-2 libxt6
 
-      # Install Firefox WebDriver (using WebDriverManager)
-      - name: Install Firefox WebDriver using WebDriverManager
-        run: |
-          mvn dependency:copy-dependencies -Dartifact=io.github.bonigarcia:webdrivermanager:5.3.0
+        # Install Firefox WebDriver (using WebDriverManager)
+        - name: Install Firefox WebDriver using WebDriverManager
 
-      - name: Build with Maven
-        run: mvn clean install -DskipTests
 
-      - name: Run Tests
-        run: mvn test
 
-      # Submit Dependency Snapshot
-      - name: Submit Dependency Snapshot
-        uses: advanced-security/maven-dependency-submission-action@v1.0.0
-        with:
-          github_token: ${{ secrets.MY_PAT }}
+        - name: Build with Maven
+          run: mvn clean install -DskipTests
+
+        - name: Run Tests
+          run: mvn test
+
+        - name: Submit Dependency Snapshot
+          uses: advanced-security/maven-dependency-submission-action@latest
+          with:
+            github_token: ${{ secrets.MY_PAT }}
+            uses: advanced-security/maven-dependency-submission-action@v1.0.0
