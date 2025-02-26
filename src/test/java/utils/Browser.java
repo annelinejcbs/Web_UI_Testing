@@ -29,8 +29,9 @@ public class Browser {
                 case "firefox":
                     WebDriverManager.firefoxdriver().clearDriverCache().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.addArguments("--headless");
-                    webDriver = new FirefoxDriver();
+                    firefoxOptions.addArguments("--no-sandbox");  // Avoid sandboxing issues in some CI environments
+                    firefoxOptions.addArguments("--disable-dev-shm-usage");  // Fix issues related to shared memory
+                    webDriver = new FirefoxDriver(firefoxOptions);
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().clearDriverCache().setup();
