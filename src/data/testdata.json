@@ -1,24 +1,24 @@
 {
   "users": [
     {
-      "firstName": "Pink",
-      "lastName": "Teddy",
-      "username": "PinkTeddy",
+      "firstName": "FName1",
+      "lastName": "LName1",
+      "username": "User1",
       "password": "Pass1",
-      "company": "CompanyBBB",
+      "company": "CompanyAAA",
       "role": "Admin",
-      "email": "PinkTeddy@mail.com",
-      "cellPhone": "0857897654"
+      "email": "admin@mail.com",
+      "cellPhone": "083555"
     },
     {
-      "firstName": "Ben",
-      "lastName": "Shoe",
-      "username": "BenShoe",
+      "firstName": "FName2",
+      "lastName": "LName2",
+      "username": "User2",
       "password": "Pass2",
-      "company": "CompanyAAA",
+      "company": "CompanyBBB",
       "role": "Customer",
-      "email": "Ben@mail.com",
-      "cellPhone": "0849873829"
+      "email": "customer@mail.com",
+      "cellPhone": "083444"
     }
   ]
 }

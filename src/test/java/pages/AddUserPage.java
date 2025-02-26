@@ -1,7 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,19 +81,24 @@ public class AddUserPage {
     }
 
     public void SelectCompany(String company) {
-        if (company.equals("CompanyAAA")) {
-            xpath_CompanyAAASelect.click();
-        } else if (company.equals("CompanyBBB")) {
-            xpath_CompanyBBBSelect.click();
+
+        switch(company) {
+            case "CompanyAAA":
+                xpath_CompanyAAASelect.click();
+                break;
+            case "CompanyBBB":
+                xpath_CompanyBBBSelect.click();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid company: " + company);
         }
     }
 
     public void SelectRole(String role) {
         // Locate the dropdown and select the role
-        Select roleDropdownselect = new Select(xpath_RoleSelect);
-
+        Select roleDropdownSelect = new Select(xpath_RoleSelect);
         // Select the role by visible text (no need to loop)
-        roleDropdownselect.selectByVisibleText(role);
+        roleDropdownSelect.selectByVisibleText(role);
     }
 
     public void EnterEmail(String email) {
@@ -106,14 +109,10 @@ public class AddUserPage {
         xpath_MobilephoneTxtbox.sendKeys(cellPhone);
     }
 
-    // Click the "Save" button
+    // Click the "Save" button with wait
     public void clickSave() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(xpath_SaveBtn));
-
-        // Scroll the Save button into view and click it
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", xpath_SaveBtn);
 
         xpath_SaveBtn.click();
     }
@@ -123,4 +122,3 @@ public class AddUserPage {
         xpath_CloseBtn.click();
     }
 }
-
