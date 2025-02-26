@@ -173,6 +173,9 @@ This project is licensed under the MIT License, and you can see the LICENSE file
 
 ### Screenshots
 These screenshots demonstrate that the project runs successfully both on a local machine and through GitHub Actions.
+- ![Local run](Screenshots_Of_Runs/Screenshot 2025-02-26 153115 Local .png)
+- ![GITHUB run](Screenshots_Of_Runs/Screenshot 2025-02-26 153355 Github actions.png)
+
 
 
 
