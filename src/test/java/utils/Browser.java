@@ -8,12 +8,16 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.GeckoDriverService;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Browser {
 
-        public static WebDriver createWebDriver(String browser) {
+        public static WebDriver createWebDriver(String browser) throws IOException {
             WebDriver webDriver;
 
             switch (browser.toLowerCase()) {
@@ -28,12 +32,26 @@ public class Browser {
                     break;
                 case "firefox":
 
+                    // Start Xvfb in the background (to simulate a display in headless mode)
+                    //Runtime.getRuntime().exec("Xvfb :90 -screen 0 1280x1024x24 &");
+
+                // Set the DISPLAY variable to the simulated Xvfb display
+                    Map<String, String> environment = new HashMap<>();
+                    environment.put("DISPLAY", ":90");
+
+                    GeckoDriverService service = new GeckoDriverService.Builder()
+                            .usingAnyFreePort()
+                            .withEnvironment(environment)
+                            .build();
+
                     WebDriverManager.firefoxdriver().clearDriverCache().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--headless");
                     firefoxOptions.addArguments("--no-sandbox");
                     firefoxOptions.addArguments("--disable-dev-shm-usage");
-                    webDriver = new FirefoxDriver(firefoxOptions);
+                    webDriver = new FirefoxDriver(service, firefoxOptions);
+
+
 
                     break;
                 case "edge":

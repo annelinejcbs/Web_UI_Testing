@@ -299,3 +299,48 @@
 2025-02-26 09:38:49 INFO  [main] tests.UserTest - User User21740555528184 saved successfully.
 2025-02-26 09:38:49 INFO  [main] tests.UserTest - User User21740555528184 was added successfully.
 2025-02-26 09:38:50 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
+2025-02-26 12:41:04 INFO  [main] tests.UserTest - Setting up WebDriver for chrome
+2025-02-26 12:41:04 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-26 12:41:04 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-26 12:41:05 INFO  [main] tests.UserTest - User List Table visibility validated.
+2025-02-26 12:41:06 INFO  [main] tests.UserTest - User User11740566465329 saved successfully.
+2025-02-26 12:41:07 INFO  [main] tests.UserTest - User User11740566465329 was added successfully.
+2025-02-26 12:41:09 INFO  [main] tests.UserTest - User User21740566467527 saved successfully.
+2025-02-26 12:41:09 INFO  [main] tests.UserTest - User User21740566467527 was added successfully.
+2025-02-26 12:41:10 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
+2025-02-26 12:41:26 INFO  [main] tests.UserTest - Setting up WebDriver for edge
+2025-02-26 12:41:26 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-26 12:41:26 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-26 12:41:26 INFO  [main] tests.UserTest - User List Table visibility validated.
+2025-02-26 12:41:28 INFO  [main] tests.UserTest - User User11740566486695 saved successfully.
+2025-02-26 12:41:28 INFO  [main] tests.UserTest - User User11740566486695 was added successfully.
+2025-02-26 12:41:30 INFO  [main] tests.UserTest - User User21740566488854 saved successfully.
+2025-02-26 12:41:30 INFO  [main] tests.UserTest - User User21740566488854 was added successfully.
+2025-02-26 12:41:32 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
+2025-02-26 12:42:21 INFO  [main] tests.UserTest - Setting up WebDriver for chrome
+2025-02-26 12:42:21 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-26 12:42:21 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-26 12:42:21 INFO  [main] tests.UserTest - User List Table visibility validated.
+2025-02-26 12:42:23 INFO  [main] tests.UserTest - User User11740566541802 saved successfully.
+2025-02-26 12:42:23 INFO  [main] tests.UserTest - User User11740566541802 was added successfully.
+2025-02-26 12:42:25 INFO  [main] tests.UserTest - User User21740566544128 saved successfully.
+2025-02-26 12:42:26 INFO  [main] tests.UserTest - User User21740566544128 was added successfully.
+2025-02-26 12:42:26 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
+2025-02-26 12:42:43 INFO  [main] tests.UserTest - Setting up WebDriver for edge
+2025-02-26 12:42:43 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-26 12:42:43 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-26 12:42:44 INFO  [main] tests.UserTest - User List Table visibility validated.
+2025-02-26 12:42:46 INFO  [main] tests.UserTest - User User11740566564502 saved successfully.
+2025-02-26 12:42:46 INFO  [main] tests.UserTest - User User11740566564502 was added successfully.
+2025-02-26 12:42:48 INFO  [main] tests.UserTest - User User21740566566857 saved successfully.
+2025-02-26 12:42:48 INFO  [main] tests.UserTest - User User21740566566857 was added successfully.
+2025-02-26 12:42:50 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
+2025-02-26 12:43:01 INFO  [main] tests.UserTest - Setting up WebDriver for firefox
+2025-02-26 12:43:01 INFO  [main] tests.UserTest - WebDriver and application setup complete.
+2025-02-26 12:43:01 INFO  [main] tests.UserTest - Test Case 'testAddUser' started.
+2025-02-26 12:43:01 INFO  [main] tests.UserTest - User List Table visibility validated.
+2025-02-26 12:43:02 INFO  [main] tests.UserTest - User User11740566581508 saved successfully.
+2025-02-26 12:43:03 INFO  [main] tests.UserTest - User User11740566581508 was added successfully.
+2025-02-26 12:43:04 INFO  [main] tests.UserTest - User User21740566583071 saved successfully.
+2025-02-26 12:43:04 INFO  [main] tests.UserTest - User User21740566583071 was added successfully.
+2025-02-26 12:43:05 ERROR [main] tests.UserTest - Error cleaning up temporary directories: user-data-dir-1
