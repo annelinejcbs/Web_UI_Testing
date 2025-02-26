@@ -11,9 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class UserListPage {
     private WebDriver driver;
+    private static final Logger logger = Logger.getLogger(UserListPage.class.getName()); // Logger for error handling
 
     // Locators for User List Page
     @FindBy(xpath = "//table[contains(@class, 'smart-table')]//tbody//tr")
@@ -27,66 +29,58 @@ public class UserListPage {
         PageFactory.initElements(driver, this); // Initialize elements annotated with @FindBy
     }
 
+    // Helper method for waiting for visibility of elements
+    private void waitForElementToBeVisible(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    // Method to check if the user list table is visible
     public boolean isUserListTableVisible() {
         try {
-            WebElement userListTable = xpath_tableName;
-            return userListTable.isDisplayed();  // Returns true if the table is visible
+            waitForElementToBeVisible(xpath_tableName); // Wait for table visibility
+            return xpath_tableName.isDisplayed();
         } catch (Exception e) {
-            return false;  // Returns false if the table is not found or not visible
+            logger.warning("User list table not visible: " + e.getMessage());
+            return false;
         }
     }
 
-
-
     // Click on "Add User" button
     public AddUserPage clickAddUser() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(xpath_AddUserBnt)); // Wait for the button to be clickable
+        waitForElementToBeVisible(xpath_AddUserBnt); // Wait for button to be visible
         xpath_AddUserBnt.click();
         return new AddUserPage(driver);
     }
 
     // Method to extract all usernames from the table
     public List<String> getUsernamesFromTable() {
-        // Wait until the table rows are visible
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[contains(@class, 'smart-table')]//tbody//tr")));
+        waitForElementToBeVisible(xpath_tableName); // Wait for table rows to be visible
 
-        // Create a list to store usernames
         List<String> usernames = new ArrayList<>();
-
-        // Locate all rows in the table body (excluding header)
         List<WebElement> rows = driver.findElements(By.xpath("//table[contains(@class, 'smart-table')]//tbody//tr"));
 
-        // Loop through each row and extract the username (assuming username is in the first column)
+        // Loop through each row and extract the username (assuming it's in the third column)
         for (WebElement row : rows) {
             try {
-                // Get the username from the first column (assuming username is in the first column)
                 WebElement usernameCell = row.findElement(By.xpath("./td[3]"));  // Adjust index if needed
                 String username = usernameCell.getText().trim();
 
-                // Skip empty rows (if any)
+                // Skip empty usernames and add non-empty ones
                 if (!username.isEmpty()) {
-                    usernames.add(username);  // Add username to the list
+                    usernames.add(username);
                 }
             } catch (Exception e) {
-                // Handle the case where the row does not contain the expected structure
-                System.out.println("Error extracting username: " + e.getMessage());
+                logger.warning("Error extracting username from row: " + e.getMessage());
             }
-
         }
 
         return usernames;
     }
 
-
     // Method to verify if a specific user is added to the table
     public boolean isUserAdded(String username) {
-        // Get all the usernames from the table
         List<String> usernames = getUsernamesFromTable();
-
-        // Check if the username exists in the list
         return usernames.contains(username);
     }
-
 }

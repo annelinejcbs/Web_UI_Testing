@@ -1,141 +1,67 @@
 package tests;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.Status;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.fasterxml.jackson.databind.JsonNode;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.UserListPage;
 import pages.AddUserPage;
 import utils.DataUtils;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import com.fasterxml.jackson.databind.JsonNode;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.By;
+import utils.Browser;
 import utils.TakeScreenShot;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import utils.extentReport;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
-import java.util.UUID;
 
 public class UserTest extends extentReport {
+
     private String baseUrl = "http://www.way2automation.com/angularjs-protractor/webtables/";
     private UserListPage userListPage;
     private AddUserPage addUserPage;
 
-    // Logger instance for this class
     private static final Logger logger = LogManager.getLogger(UserTest.class);
-
-    TakeScreenShot takeScreenShot = new TakeScreenShot();
+    private static final String USER_DATA_DIR = "user-data-dir-";
+    private TakeScreenShot takeScreenShot = new TakeScreenShot();
+    private ThreadLocal<WebDriver> driver = new ThreadLocal<>();  // ThreadLocal for WebDriver
 
     @BeforeClass
-    public void setUpExtent(){
+    public void setUpExtent() {
         extent = new ExtentReports();
     }
-
-    private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @Parameters("browser")
     @BeforeMethod
     public void setUp(String browser) throws Exception {
-        WebDriver webDriver;
-
-        // Create unique temporary user data directories for each session
-        String tempDirPath = "user-data-dir-" + System.currentTimeMillis();  // Use timestamp to ensure uniqueness
-        Path tempDir = Files.createTempDirectory(tempDirPath + "chrome-user-data-" + Thread.currentThread().getId());
-        Path tempDirEdge = Files.createTempDirectory(tempDirPath +"edge-user-data-" + Thread.currentThread().getId());
-
-        if (browser.equalsIgnoreCase("chrome")) {
-            // Set up for Chrome
-            WebDriverManager.chromedriver().clearDriverCache().setup();
-            ChromeOptions options = new ChromeOptions();
-            String uniqueDirChrome = "/tmp/chrome-user-data-" + UUID.randomUUID();
-            options.addArguments("user-data-dir=" + uniqueDirChrome);
-            options.addArguments("--headless");  // Remove if not needed for debugging
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            webDriver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            // Set up for Firefox
-            WebDriverManager.firefoxdriver().clearDriverCache().setup();
-            webDriver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("edge")) {
-            // Set up for Edge
-            WebDriverManager.edgedriver().clearDriverCache().setup();
-            EdgeOptions edgeOptions = new EdgeOptions();
-            //String uniqueDirEdge = "/tmp/edge-user-data-" + UUID.randomUUID();
-            edgeOptions.addArguments("--headless");
-
-            webDriver = new EdgeDriver(edgeOptions);
-        } else {
-            throw new IllegalArgumentException("Unsupported browser: " + browser);
-        }
-
-        driver.set(webDriver);
+        // Create WebDriver using the Browser utility class and set it into ThreadLocal
+        WebDriver webDriver = Browser.createWebDriver(browser);
+        driver.set(webDriver);  // Set the WebDriver instance in ThreadLocal
         driver.get().get(baseUrl);  // Navigate to the base URL
-        driver.get().manage().window().maximize();
+        driver.get().manage().window().maximize();  // Maximize window
 
         logger.info("Setting up WebDriver for " + browser);
 
-        // Initialize page objects
+        // Initialize Page Objects
         userListPage = PageFactory.initElements(driver.get(), UserListPage.class);
         addUserPage = PageFactory.initElements(driver.get(), AddUserPage.class);
 
         logger.info("WebDriver and application setup complete.");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        // Clean up WebDriver and temporary directories
-        logger.info("Test completed. Closing the browser.");
-
-        if (driver.get() != null) {
-            driver.get().quit();
-            driver.remove();
-        }
-
-        // Cleanup temporary user data directories
-        cleanupTempDirectories();
-
-        logger.info("Temporary directories cleaned up.");
-    }
-
-    private void cleanupTempDirectories() {
-        try {
-            Path tempDir = Path.of("chrome-user-data-" + Thread.currentThread().getId());
-            Path tempDirEdge = Path.of("edge-user-data-" + Thread.currentThread().getId());
-
-            Files.walk(tempDir).map(Path::toFile).forEach(file -> {
-                if (!file.delete()) {
-                    logger.error("Failed to delete file: " + file.getAbsolutePath());
-                }
-            });
-
-            Files.walk(tempDirEdge).map(Path::toFile).forEach(file -> {
-                if (!file.delete()) {
-                    logger.error("Failed to delete file: " + file.getAbsolutePath());
-                }
-            });
-        } catch (Exception e) {
-            logger.error("Error cleaning up temporary directories: " + e.getMessage());
-        }
-    }
-
     @Test
     public void testAddUser() throws Exception {
         logger.info("Test Case 'testAddUser' started.");
 
+        // Load user data
         JsonNode testData = DataUtils.loadTestData("src/data/testdata.json");
         JsonNode users = testData.get("users");
 
@@ -169,7 +95,7 @@ public class UserTest extends extentReport {
 
             // Step 3: Click "Add User" and wait for the form to load
             userListPage.clickAddUser();
-            WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(10));  // Fix: driver.get() is passed here
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@name,'FirstName')]")));
 
             // Step 4: Fill out the user form
@@ -197,5 +123,26 @@ public class UserTest extends extentReport {
         }
 
         test.log(Status.INFO, "Add User Test Case completed");
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver.get() != null) {
+            driver.get().quit();  // Quit the driver after the test method
+        }
+        cleanupTempDirectories();
+    }
+
+    private void cleanupTempDirectories() {
+        try {
+            Path tempDir = Path.of(USER_DATA_DIR + Thread.currentThread().getId());
+            Files.walk(tempDir).map(Path::toFile).forEach(file -> {
+                if (!file.delete()) {
+                    logger.error("Failed to delete file: " + file.getAbsolutePath());
+                }
+            });
+        } catch (Exception e) {
+            logger.error("Error cleaning up temporary directories: " + e.getMessage());
+        }
     }
 }

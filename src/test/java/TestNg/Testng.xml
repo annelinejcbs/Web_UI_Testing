@@ -5,7 +5,7 @@
     <parameter name ="browser" value="chrome"/>
 
         <classes>
-            <!-- Add your test classes here -->
+
             <class name="tests.UserTest"/>
         </classes>
     </test>
@@ -14,7 +14,7 @@
         <parameter name ="browser" value="edge"/>
 
         <classes>
-            <!-- Add your test classes here -->
+
             <class name="tests.UserTest"/>
         </classes>
     </test>
