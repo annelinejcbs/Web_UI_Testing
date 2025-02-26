@@ -33,7 +33,7 @@ public class Browser {
                 case "firefox":
 
                     // Start Xvfb in the background (to simulate a display in headless mode)
-                    //Runtime.getRuntime().exec("Xvfb :90 -screen 0 1280x1024x24 &");
+                    Runtime.getRuntime().exec("Xvfb :90 -screen 0 1280x1024x24 &");
 
                 // Set the DISPLAY variable to the simulated Xvfb display
                     Map<String, String> environment = new HashMap<>();
