@@ -19,4 +19,13 @@
         </classes>
     </test>
 
+    <test thread-count="5" name="firefox">
+        <parameter name ="browser" value="firefox"/>
+
+        <classes>
+
+            <class name="tests.UserTest"/>
+        </classes>
+    </test>
+
 </suite>

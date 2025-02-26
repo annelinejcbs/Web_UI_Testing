@@ -69,13 +69,18 @@ public class UserTest extends extentReport {
         test.log(Status.INFO, "Verify User List Table Testcase started");
 
         // Step 1: Validate the User List Table visibility
-        Assert.assertTrue(userListPage.isUserListTableVisible(), "User List Table is not visible.");
-        logger.info("User List Table visibility validated.");
-        takeScreenShot.takeSnapshot(driver.get(), "UserListTableValidation");
+        try {
+            Assert.assertTrue(userListPage.isUserListTableVisible(), "User List Table is not visible.");
+            logger.info("User List Table visibility validated.");
+            takeScreenShot.takeSnapshot(driver.get(), "UserListTableValidation");
+            test.log(Status.PASS, "User List Table visibility validated successfully.");
+        } catch (AssertionError e) {
+            logger.error("User List Table is not visible: " + e.getMessage());
+            takeScreenShot.takeSnapshot(driver.get(), "UserListTableValidation_Failure");
+            test.log(Status.FAIL, "User List Table visibility validation failed.");
+        }
 
-        test.log(Status.INFO, "User List Table Testcase completed");
-
-        // Step 2: Add users from the JSON data
+// Step 2: Add users from the JSON data
         test = extent.createTest("Add User Test Case");
         test.log(Status.INFO, "Add User Test Case started");
 
@@ -93,39 +98,49 @@ public class UserTest extends extentReport {
 
             logger.debug("Filling out details for user: {}", username);
 
-            // Step 3: Click "Add User" and wait for the form to load
-            userListPage.clickAddUser();
-            WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(10));  // Fix: driver.get() is passed here
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@name,'FirstName')]")));
+            try {
+                // Step 3: Click "Add User" and wait for the form to load
+                userListPage.clickAddUser();
+                WebDriverWait wait = new WebDriverWait(driver.get(), Duration.ofSeconds(10));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@name,'FirstName')]")));
 
-            // Step 4: Fill out the user form
-            addUserPage.clearFields();
-            addUserPage.EnterFirstName(firstName);
-            addUserPage.EnterLastName(lastName);
-            addUserPage.EnterUserName(username);
-            addUserPage.EnterPassword(password);
-            addUserPage.SelectCompany(company);
-            addUserPage.SelectRole(role);
-            addUserPage.EnterEmail(email);
-            addUserPage.EnterMobileNumber(cellPhone);
-            takeScreenShot.takeSnapshot(driver.get(), "UserDetails_" + username);
+                // Step 4: Fill out the user form
+                addUserPage.clearFields();
+                addUserPage.EnterFirstName(firstName);
+                addUserPage.EnterLastName(lastName);
+                addUserPage.EnterUserName(username);
+                addUserPage.EnterPassword(password);
+                addUserPage.SelectCompany(company);
+                addUserPage.SelectRole(role);
+                addUserPage.EnterEmail(email);
+                addUserPage.EnterMobileNumber(cellPhone);
+                takeScreenShot.takeSnapshot(driver.get(), "UserDetails_" + username);
 
-            // Save the user
-            addUserPage.clickSave();
-            logger.info("User {} saved successfully.", username);
+                // Save the user
+                addUserPage.clickSave();
+                logger.info("User {} saved successfully.", username);
 
-            // Step 5: Verify the user was added
-            test = extent.createTest("Verify User Added Test Case: " + username);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table//td[contains(text(),'" + username + "')]")));
-            Assert.assertTrue(userListPage.isUserAdded(username), "User " + username + " was not added successfully.");
-            logger.info("User {} was added successfully.", username);
-            takeScreenShot.takeSnapshot(driver.get(), "UserAdded_" + username);
+                // Step 5: Verify the user was added
+                test = extent.createTest("Verify User Added Test Case: " + username);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table//td[contains(text(),'" + username + "')]")));
+                Assert.assertTrue(userListPage.isUserAdded(username), "User " + username + " was not added successfully.");
+                logger.info("User {} was added successfully.", username);
+                takeScreenShot.takeSnapshot(driver.get(), "UserAdded_" + username);
+
+                // Log the pass for the individual user
+                test.log(Status.PASS, "User " + username + " added successfully.");
+
+            } catch (AssertionError e) {
+                logger.error("Error adding user " + username + ": " + e.getMessage());
+                takeScreenShot.takeSnapshot(driver.get(), "UserAdded_Failure_" + username);
+                test.log(Status.FAIL, "User " + username + " addition failed.");
+            }
         }
 
         test.log(Status.INFO, "Add User Test Case completed");
     }
 
-    @AfterMethod
+        @AfterMethod
     public void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();  // Quit the driver after the test method
