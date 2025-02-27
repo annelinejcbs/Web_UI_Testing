@@ -28,7 +28,7 @@ public class extentReport {
 
         // If the environment variable is not set, use a default path
         if (reportPath == null || reportPath.isEmpty()) {
-            reportPath = "Reports/framework.html";  // Default relative path
+            reportPath = "Reports/Web_UI_Automation_Report.html";  // Default relative path
         }
 
         // Ensure that the Reports folder exists
