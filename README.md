@@ -40,7 +40,7 @@ This project includes Selenium tests for the **Web_UI**, focusing on:
 **Clone the Repository**: Clone the repository using the following command:
 
 
-git clone https://github.com/yourusername/user-management-tests.git
+git clone
 
 ### Navigate to the Project Directory:
 
@@ -70,6 +70,7 @@ mvn clean test -Dbrowser=chrome
 ### Example YML File:
 
 Here is an example of a YAML configuration file that you can use for a CI/CD pipeline (such as GitHub Actions) to automatically run the tests:
+```bash
 
 name: Run Selenium Tests
 
@@ -99,6 +100,7 @@ jobs:
 
     - name: Run Tests with Maven
       run: mvn clean test
+```
 
 ### Explanation of the YML File:
 - **Trigger:** The workflow is triggered on pushes and pull requests to the main branch.
@@ -110,7 +112,7 @@ This YML file is designed to run your tests on every push or pull request to the
 
 ### Test Reports:
 
-After the tests are run, the results will be available in the target/extent-reports/ directory. You can open the index.html file to view the detailed test execution reports.
+After the tests are run, the results will be available in the target/extent-reports/ directory. You can open the Web_UI_Automation_Report.html file to view the detailed test execution reports.
 
 ### Project Structure:
 
@@ -131,9 +133,9 @@ user-management-tests/
 
 ### Key Folders:
 
-**src/test/java/tests/:** Contains test classes like UserTest.java.
-**src/test/resources/:** Contains test data and configuration files like testdata.json and testng.xml.
-**reports/extent-reports/:** The folder where ExtentReports generates HTML reports.
+- **src/test/java/tests/:** Contains test classes like UserTest.java.
+- **src/test/resources/:** Contains test data and configuration files like testdata.json and testng.xml.
+- **reports/extent-reports/:** The folder where ExtentReports generates HTML reports.
 
 ### Test Data Example (testdata.json):
 
@@ -174,9 +176,9 @@ This project is licensed under the MIT License, and you can see the LICENSE file
 ### Screenshots
 These screenshots demonstrate that the project runs successfully both on a local machine and through GitHub Actions.
 
-![Local run](Screenshot_2025-02-26_153115_Local.png)
+![Local run](Screenshots_Of_Runs/Screenshot_2025-02-26_153115_Local.png)
 
-![GitHub run](Screenshot_2025-02-26_153355_Github_actions.png)
+![GitHub run](Screenshots_Of_Runs/Screenshot_2025-02-26_153355_Github_actions.png)
 
 
 
